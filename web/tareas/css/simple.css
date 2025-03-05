@@ -1,0 +1,63 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: lightblue;
+}
+
+header h3{
+    padding-left: 150px;
+}
+
+header nav{
+    margin: 20px;
+    justify-content: space-around;
+    padding-right: 150px;
+}
+
+body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#welcome{
+    background-color: lightcoral;
+    padding: 50px;
+}
+
+#welcome h1{
+    display: flex;
+    justify-content: center;
+}
+
+#welcome p{
+    display: flex;
+    justify-content: center;
+}
+
+#subscribeSection {
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+}
+
+#subscribeSection form{
+    margin: 16px;
+}
+
+#subscribeSection form button{
+    background-color: lightcoral;
+}
+
+#imageSection{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 30px;
+    align-items: center;
+}
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+}

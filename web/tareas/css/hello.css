@@ -1,0 +1,36 @@
+*{
+    margin: 10px;
+}
+h1{
+    color: black;
+    border: black 3px solid;
+    padding: 15px;
+    margin: 10px;
+}
+
+body{
+    border: black 3px solid;
+    margin: 0px;
+}
+
+header{
+    border: lightcoral 3px dotted;
+    border-radius: 100px;
+    padding: 20px;
+}
+
+nav{
+    border: lightslategray 3px solid;
+    background-image: url("../imagen/flower-background-desktop-wallpaper-cute-vector_53876-136877.avif");
+}
+
+footer{
+    border: lightseagreen 3px solid;
+    background-color: blanchedalmond;
+} 
+
+footer p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+}
