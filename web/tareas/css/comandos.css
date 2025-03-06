@@ -17,9 +17,10 @@ table {
     width: 80%;
     margin: 20px auto;
     border-collapse: collapse;
+    background: white;
 }
 
-th, td {
+td, th {
     border: 2px solid blue;
     padding: 10px;
     text-align: center;
@@ -27,6 +28,7 @@ th, td {
 
 th {
     background-color: lightblue;
+    font-weight: bold;
 }
 
 footer {
@@ -36,12 +38,21 @@ footer {
     margin-top: 20px;
 }
 
-a {
+button {
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button a {
     text-decoration: none;
-    color: white;
+    color: blue;
     font-weight: bold;
 }
 
-a:hover {
-    color: lightgray;
+button:hover {
+    background-color: lightgray;
 }
+

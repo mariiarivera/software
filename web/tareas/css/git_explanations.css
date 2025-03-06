@@ -11,22 +11,23 @@ h3 {
     color: white;
     padding: 20px;
     margin: 0;
+    font-size: 30px;
 }
 
-img {
-    margin: 20px 0;
+#images {
+    margin: 20px 0px;
 }
 
-p {
-    font-size: 16px;
-    margin: 5px 0;
-}
-
-ol {
-    display: inline-block;
+#text {
+    width: 80%;
+    margin: 100px;
     text-align: left;
-    padding: 0;
-    margin: 20px auto;
+}
+
+#lista {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 li {
@@ -41,13 +42,17 @@ footer {
     margin-top: 20px;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+button {
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
-a:hover {
-    color: lightgray;
+button a {
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
 }
 
