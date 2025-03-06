@@ -1,0 +1,15 @@
+header{
+    background-color: blue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px 40px;
+    color: whitesmoke
+}
+body{
+    padding:10px;
+    background-color: whitesmoke;
+}
+footer{
+    background-color: blue;
+    padding:2px 20px;
+    justify-content: center;
+}
