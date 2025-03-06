@@ -28,7 +28,7 @@ body{
 
 #welcome{
     background-color: lightcoral;
-    padding: 50px;
+    padding: 100px;
 }
 
 #welcome h1{
@@ -60,6 +60,7 @@ body{
     justify-content: space-evenly;
     padding-top: 30px;
     align-items: center;
+    padding-bottom: 50px;
 }
 
 
