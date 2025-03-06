@@ -1,15 +1,46 @@
-header{
-    background-color: blue;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    padding: 10px 40px;
-    color: whitesmoke
-}
-body{
-    padding:10px;
+body {
+    margin: 0;
+    padding: 0;
     background-color: whitesmoke;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
-footer{
+
+header {
     background-color: blue;
-    padding:2px 20px;
-    justify-content: center;
+    color: white;
+    padding: 20px;
+}
+
+#Index {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    color: darkblue;
+}
+
+footer {
+    background-color: blue;
+    color: white;
+    padding: 10px;
 }
