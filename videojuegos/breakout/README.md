@@ -19,4 +19,4 @@ Este es un juego clásico de Breakout desarrollado en JavaScript utilizando el c
 
 ## Cómo Ejecutar el Juego
 Abre la página: 
-[Breakout](
+[Breakout](https://mariiarivera.github.io/software/videojuegos/breakout/breakout.html)
