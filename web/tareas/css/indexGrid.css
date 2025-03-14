@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    height: 100vh;
+}
+
+header {
+    background-color: rgb(182, 60, 60);
+    color: white;
+    padding: 20px;
+}
+
+#index {
+    background: white;
+    margin: 20px auto;
+    padding: 110px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+}
+
+footer {
+    background-color: rgb(182, 60, 60);
+    color: white;
+    padding: 10px;
+}
