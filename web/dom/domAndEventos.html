@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preguntas sobre DOM y Eventos</title>
+  <link rel="stylesheet" href="eventos_dom.css">
+  <script>
+    // Función que actualiza la posición del mouse en la pantalla
+    function mostrarPosicionMouse(evento) {
+      const posicion = `X: ${evento.clientX}, Y: ${evento.clientY}`;
+      document.getElementById("posicionMouse").textContent = posicion;
+    }
+    
+    // Agregar un listener para detectar el movimiento del mouse
+    document.addEventListener("mousemove", mostrarPosicionMouse);
+
+    // Función para obtener el nombre completo y mostrarlo en el documento
+    function mostrarNombreCompleto() {
+      const firstName = document.getElementById("firstName").value;
+      const lastName = document.getElementById("lastName").value;
+      const fullName = `${firstName} ${lastName}`;
+      
+      let nameDisplay = document.getElementById("nameDisplay");
+      if (!nameDisplay) {
+        nameDisplay = document.createElement("p");
+        nameDisplay.id = "nameDisplay";
+        document.getElementById("formContainer").appendChild(nameDisplay);
+      }
+      nameDisplay.textContent = `Nombre completo: ${fullName}`;
+    }
+
+    // Función para agregar una fila a la tabla
+    function agregarFila() {
+      const tabla = document.getElementById("miTabla");
+      const nuevaFila = tabla.insertRow();
+      nuevaFila.insertCell(0).textContent = "Nueva fila columna 1";
+      nuevaFila.insertCell(1).textContent = "Nueva fila columna 2";
+    }
+    
+    // Función para agregar una columna a la tabla
+    function agregarColumna() {
+      const tabla = document.getElementById("miTabla");
+      for (let fila of tabla.rows) {
+        let nuevaCelda = fila.insertCell();
+        nuevaCelda.textContent = "Nueva columna";
+      }
+    }
+
+    function actualizarCelda() {
+      const rowIndex = parseInt(document.getElementById("rowIndex").value) - 1;
+      const colIndex = parseInt(document.getElementById("colIndex").value) - 1;
+      const newValue = document.getElementById("newValue").value;
+      const tabla = document.getElementById("miTabla");
+      
+      if (rowIndex >= 0 && rowIndex < tabla.rows.length && colIndex >= 0 && colIndex < tabla.rows[rowIndex].cells.length) {
+        tabla.rows[rowIndex].cells[colIndex].textContent = newValue;
+      } else {
+        alert("Índices fuera de rango");
+      }
+    }
+
+    function agregarColor() {
+      const colores = ["Red", "Blue", "Green", "Yellow", "Purple", "Orange"];
+      const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+      const lista = document.getElementById("colorList");
+      const nuevoElemento = document.createElement("li");
+      nuevoElemento.textContent = colorAleatorio;
+      lista.appendChild(nuevoElemento);
+    }
+
+    function quitarColor() {
+      const lista = document.getElementById("colorList");
+      if (lista.lastChild) {
+        lista.removeChild(lista.lastChild);
+      }
+    }
+
+    function cambiarTamanoImagen(event) {
+      const width = Math.floor(Math.random() * (600 - 300 + 1)) + 300;
+      const height = Math.floor(Math.random() * (600 - 300 + 1)) + 300;
+      event.target.src = "URL_DE_TU_IMAGEN";
+      event.target.width = width;
+      event.target.height = height;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Preguntas sobre DOM y Eventos en JavaScript</h1>
+  </div>
+
+  <div class="container">
+    <h2>Posición del mouse:</h2>
+    <p id="posicionMouse">Mueve el mouse para ver la posición</p>
+  </div>
+
+  <div class="container" id="formContainer">
+    <h2>Formulario</h2>
+    <label for="firstName">First name:</label>
+    <input type="text" id="firstName" name="firstName">
+    <br>
+    <label for="lastName">Last name:</label>
+    <input type="text" id="lastName" name="lastName">
+    <br>
+    <button onclick="mostrarNombreCompleto()">Submit</button>
+  </div>
+
+  <div class="container">
+    <h2>Tabla dinámica</h2>
+    <table id="miTabla">
+      <tr>
+        <td>Row 1 column 1</td>
+        <td>Row 1 column 2</td>
+        <td>Row 1 column 3</td>
+      </tr>
+      <tr>
+        <td>Row 2 column 1</td>
+        <td>Row 2 column 2</td>
+        <td>Row 2 column 3</td>
+      </tr>
+      <tr>
+        <td>Row 3 column 1</td>
+        <td>Row 3 column 2</td>
+        <td>Row 3 column 3</td>
+      </tr>
+    </table>
+    <br>
+    <button onclick="agregarFila()">Agregar Fila</button>
+    <button onclick="agregarColumna()">Agregar Columna</button>
+  </div>
+
+  <div class="container">
+    <h2>Lista de colores</h2>
+    <ul id="colorList">
+      <li>Red</li>
+    </ul>
+    <button onclick="agregarColor()">Add Color</button>
+    <button onclick="quitarColor()">Remove Color</button>
+  </div>
+
+  <div class="container">
+    <h2>Actualizar contenido de la tabla</h2>
+    <label for="rowIndex">Row Index:</label>
+    <input type="number" id="rowIndex" min="1">
+    <br>
+    <label for="colIndex">Col Index:</label>
+    <input type="number" id="colIndex" min="1">
+    <br>
+    <label for="newValue">New Value:</label>
+    <input type="text" id="newValue">
+    <br>
+    <button onclick="actualizarCelda()">Change Content</button>
+  </div>
+
+  <div class="container">
+    <h2>Cambiar tamaño de imagen al pasar el mouse</h2>
+    <img src="gato.crdownload" alt="Imagen dinámica" width="300" height="300" onmouseenter="cambiarTamanoImagen(event)">
+  </div>
+
+  <div class="container">
+    <h2>Preguntas y respuestas con fuentes</h2>
+    
+    <div class="container">
+      <h3>1. ¿Qué es el DOM?</h3>
+      <p>El DOM (Document Object Model) es una representación estructurada de un documento HTML o XML en forma de árbol.</p>
+      <p><a href="https://desarrolloweb.com/articulos/que-es-el-dom.html" target="_blank">Fuente</a></p>
+    </div>
+    
+    <div class="container">
+      <h3>2. ¿Qué es un nodo?</h3>
+      <p>Un nodo es cada uno de los elementos que conforman el DOM, como etiquetas, atributos y texto.</p>
+      <p><a href="https://significadosweb.com/concepto-de-nodo-definicion-y-que-es/" target="_blank">Fuente</a></p>
+    </div>
+    
+    <div class="container">
+      <h3>3. ¿Cómo se accede a un elemento del DOM?</h3>
+      <p>Se puede acceder a los elementos usando métodos como <code>getElementById</code> o <code>querySelector</code>.</p>
+      <p><a href="https://lenguajejs.com/dom/buscar/navegar-elementos-dom/" target="_blank">Fuente</a></p>
+    </div>
+    
+    <div class="container">
+      <h3>4. ¿Cómo se modifica un elemento del DOM?</h3>
+      <p>Se puede modificar usando <code>textContent</code>, <code>innerHTML</code> o <code>style</code>.</p>
+      <p><a href="https://www.digitalocean.com/community/tutorials/como-modificar-atributos-clases-y-estilos-en-el-dom-es" target="_blank">Fuente</a></p>
+    </div>
+    
+    <div class="container">
+      <h3>5. ¿Cuál es la diferencia entre getElementby* y querySelector*?</h3>
+      <p>La principal diferencia es que <code>querySelector</code> utiliza selectores CSS y devuelve el primer elemento que coincide.</p>
+      <p><a href="https://es.stackoverflow.com/questions/22538/diferencia-entre-queryselector-queryselectorall-getelementbyid-getelementbyta" target="_blank">Fuente</a></p>
+    </div>
+    
+    <div class="container">
+      <h3>6. ¿Qué es un evento?</h3>
+      <p>Un evento es cualquier interacción del usuario con la página, como clics o teclas presionadas.</p>
+      <p><a href="https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/Events" target="_blank">Fuente</a></p>
+    </div>
+    
+    <div class="container">
+      <h3>7. ¿Qué es un listener?</h3>
+      <p>Un listener es una función que "escucha" un evento y reacciona cuando este ocurre.</p>
+      <p><a href="https://aws.amazon.com/es/what-is/event-listener/" target="_blank">Fuente</a></p>
+    </div>
+    
+    <div class="container">
+      <h3>8. ¿Qué es un callback?</h3>
+      <p>Un callback es una función pasada como argumento a otra función para ejecutarse posteriormente.</p>
+      <p><a href="https://www.freecodecamp.org/espanol/news/que-es-una-funcion-callback-javascript/" target="_blank">Fuente</a></p>
+    </div>
+    
+    <div class="container">
+      <h3>9. ¿Qué es un objeto de evento?</h3>
+      <p>Es un objeto que contiene información sobre el evento ocurrido, como el tipo y la posición.</p>
+      <p><a href="https://paulogalarza.com/objetos-de-evento-en-javascript-manejo-de-eventos-del-dom/" target="_blank">Fuente</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Conclusión</h2>
+    <h3>Experiencia general</h3>
+    <p>Estuvo muy fácil y rápido de hacer, solo tenía que recordar unas cosas y lograr que funcionara como yo quería. También me ayudó identificar aspectos que Chat me sugería.</p>
+    <h3>¿Cuándo y para qué usarías ChatGPT y cuándo Copilot?</h3>
+    <p>En mi experiencia, ChatGPT funciona mejor para tareas de redacción o cuando no se requieren muchos ajustes, mientras que Copilot es ideal para necesidades más específicas y detalladas.</p>
+    <h3>Ventajas de usar AI para programar</h3>
+    <p>Hace las cosas muy rápido, ofrece soluciones innovadoras y puede simplificar procesos complejos.</p>
+    <h3>Desventajas de usar AI para programar</h3>
+    <p>Los resultados no siempre son exactos, se corre el riesgo de depender demasiado de la IA y en ocasiones puede afectar el aprendizaje profundo.</p>
+  </div>
+</body>
+</html>
